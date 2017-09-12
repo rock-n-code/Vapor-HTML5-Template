@@ -1,12 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>#import("title")</title>
-	<link rel="stylesheet" href="/styles/app.css">
-</head>
-<body>
-
-#import("content")
-
-</body>
+<!doctype html>
+<html class="no-js" lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>#import("title")</title>
+		<meta name="description" content="#import("description")">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="manifest" href="site.webmanifest">
+		<link rel="apple-touch-icon" href="icon.png">
+		<link rel="stylesheet" href="/css/normalize.css">
+		<link rel="stylesheet" href="/css/main.css">
+	</head>
+	<body>
+		#import("content")
+		<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script>
+			window.jQuery || document.write('<script src="js/vender/jquery-1.12.0.min.js"><\/script>')
+		</script>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>
+		<script>
+			window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+			ga('create','#import("google-analytics")','auto');ga('send','pageview')
+		</script>
+		<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+	</body>
 </html>
