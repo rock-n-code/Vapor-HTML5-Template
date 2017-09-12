@@ -1,0 +1,8 @@
+#extend("base")
+
+#export("title") { HTML5 Boilerplate }
+#export("description") { Some description goes here... }
+#export("google-analytics") { UA-XXXXX-Y }
+#export("content") {
+	<div></div>
+}
