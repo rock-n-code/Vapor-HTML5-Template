@@ -39,6 +39,5 @@ final class Routes: RouteCollection {
         builder.get(Resource.info) { req in
             return req.description
         }
-        
     }
 }

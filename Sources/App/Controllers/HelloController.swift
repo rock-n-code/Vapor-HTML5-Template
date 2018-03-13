@@ -4,23 +4,31 @@ import HTTP
 /// Here we have a controller that helps facilitate
 /// creating typical REST patterns
 final class HelloController: ResourceRepresentable {
-    let view: ViewRenderer
-    init(_ view: ViewRenderer) {
-        self.view = view
+	
+	// MARK: Properties
+	
+    let renderer: ViewRenderer
+	
+	// MARK: Initialisations
+	
+    init(_ renderer: ViewRenderer) {
+        self.renderer = renderer
     }
-    
+	
+	// MARK: Functions
+	
     /// GET /hello
-    func index(_ req: Request) throws -> ResponseRepresentable {
-        return try view.make("hello", [
-            "name": "World"
-        ], for: req)
+    func index(_ request: Request) throws -> ResponseRepresentable {
+		let parameters = ["name": "World"]
+		
+        return try renderer.make("hello", parameters, for: request)
     }
     
     /// GET /hello/:string
-    func show(_ req: Request, _ string: String) throws -> ResponseRepresentable {
-        return try view.make("hello", [
-            "name": string
-        ], for: req)
+    func show(_ request: Request, _ string: String) throws -> ResponseRepresentable {
+		let parameters = ["name": string]
+		
+        return try renderer.make("hello", parameters, for: request)
     }
 
     /// When making a controller, it is pretty flexible in that it
@@ -33,4 +41,5 @@ final class HelloController: ResourceRepresentable {
             show: show
         )
     }
+	
 }
